@@ -12,15 +12,14 @@ public class ConnectDB {
 	public static Connection getConnection() {
 
 		try {
-			if (connection == null) {
+			if (connection == null || connection.isClosed()) {
 				connection = DriverManager.getConnection(jdbcUrl);
 			}
 			return connection;
 
 		} catch (SQLException e) {
 
-			e.printStackTrace();
-			throw new RuntimeException("Cannot get a connection " + jdbcUrl, e);
+			throw new RuntimeException("Cannot get connection " + jdbcUrl, e);
 		}
 	}
 
