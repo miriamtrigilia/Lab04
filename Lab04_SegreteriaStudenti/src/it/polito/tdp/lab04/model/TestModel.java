@@ -6,9 +6,14 @@ public class TestModel {
 		
 		Model model = new Model();
 		
-		/*
-		 * 	Write here your test model
-		 */
+		int matricola = 146101;
+		String result = model.getNomeCognomeByMatricola(matricola);
+		System.out.println("Matricola: "+ matricola + " nome cognome: " + result);
+		
+		String iscritti = model.getIscritti("Gestione dell'innovazione e sviluppo prodotto ICT");
+		System.out.println(iscritti);
+		
+		
 
 	}
 
